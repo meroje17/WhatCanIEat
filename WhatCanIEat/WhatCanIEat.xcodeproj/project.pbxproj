@@ -20,6 +20,15 @@
 		0294E8E924D0663700FE39DC /* IngredientCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0294E8E724D0663700FE39DC /* IngredientCollectionViewCell.xib */; };
 		0294E8EC24D0665400FE39DC /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8EA24D0665400FE39DC /* RecipeTableViewCell.swift */; };
 		0294E8ED24D0665400FE39DC /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0294E8EB24D0665400FE39DC /* RecipeTableViewCell.xib */; };
+		0294E8EF24D0686F00FE39DC /* EdamamID.json in Resources */ = {isa = PBXBuildFile; fileRef = 0294E8EE24D0686F00FE39DC /* EdamamID.json */; };
+		0294E8F124D0688A00FE39DC /* Ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 0294E8F024D0688A00FE39DC /* Ingredients.json */; };
+		0294E8F424D068A100FE39DC /* WhatCanIEat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8F224D068A100FE39DC /* WhatCanIEat.xcdatamodeld */; };
+		0294E8F624D068B700FE39DC /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8F524D068B700FE39DC /* Ingredient.swift */; };
+		0294E8F824D068C000FE39DC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8F724D068C000FE39DC /* Recipe.swift */; };
+		0294E8FA24D068CA00FE39DC /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8F924D068CA00FE39DC /* SearchService.swift */; };
+		0294E8FC24D068D900FE39DC /* EdamamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8FB24D068D900FE39DC /* EdamamService.swift */; };
+		0294E8FE24D068F100FE39DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8FD24D068F100FE39DC /* CoreDataStack.swift */; };
+		0294E90024D068FB00FE39DC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8FF24D068FB00FE39DC /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,15 @@
 		0294E8E724D0663700FE39DC /* IngredientCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCollectionViewCell.xib; sourceTree = "<group>"; };
 		0294E8EA24D0665400FE39DC /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		0294E8EB24D0665400FE39DC /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
+		0294E8EE24D0686F00FE39DC /* EdamamID.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EdamamID.json; sourceTree = "<group>"; };
+		0294E8F024D0688A00FE39DC /* Ingredients.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Ingredients.json; sourceTree = "<group>"; };
+		0294E8F324D068A100FE39DC /* WhatCanIEat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WhatCanIEat.xcdatamodel; sourceTree = "<group>"; };
+		0294E8F524D068B700FE39DC /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		0294E8F724D068C000FE39DC /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		0294E8F924D068CA00FE39DC /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		0294E8FB24D068D900FE39DC /* EdamamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamService.swift; sourceTree = "<group>"; };
+		0294E8FD24D068F100FE39DC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		0294E8FF24D068FB00FE39DC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +134,15 @@
 		0294E8DB24D05EF200FE39DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0294E8EE24D0686F00FE39DC /* EdamamID.json */,
+				0294E8F024D0688A00FE39DC /* Ingredients.json */,
+				0294E8F224D068A100FE39DC /* WhatCanIEat.xcdatamodeld */,
+				0294E8F524D068B700FE39DC /* Ingredient.swift */,
+				0294E8F724D068C000FE39DC /* Recipe.swift */,
+				0294E8F924D068CA00FE39DC /* SearchService.swift */,
+				0294E8FB24D068D900FE39DC /* EdamamService.swift */,
+				0294E8FD24D068F100FE39DC /* CoreDataStack.swift */,
+				0294E8FF24D068FB00FE39DC /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0294E8D124D05ED400FE39DC /* LaunchScreen.storyboard in Resources */,
+				0294E8F124D0688A00FE39DC /* Ingredients.json in Resources */,
+				0294E8EF24D0686F00FE39DC /* EdamamID.json in Resources */,
 				0294E8CE24D05ED400FE39DC /* Assets.xcassets in Resources */,
 				0294E8E924D0663700FE39DC /* IngredientCollectionViewCell.xib in Resources */,
 				0294E8ED24D0665400FE39DC /* RecipeTableViewCell.xib in Resources */,
@@ -195,12 +224,19 @@
 			files = (
 				0294E8E324D065BE00FE39DC /* FavoriteController.swift in Sources */,
 				0294E8E124D065AD00FE39DC /* SearchResultController.swift in Sources */,
+				0294E8FC24D068D900FE39DC /* EdamamService.swift in Sources */,
+				0294E90024D068FB00FE39DC /* CoreDataManager.swift in Sources */,
+				0294E8F624D068B700FE39DC /* Ingredient.swift in Sources */,
 				0294E8C524D05ED000FE39DC /* AppDelegate.swift in Sources */,
 				0294E8E824D0663700FE39DC /* IngredientCollectionViewCell.swift in Sources */,
 				0294E8C724D05ED000FE39DC /* SceneDelegate.swift in Sources */,
+				0294E8FE24D068F100FE39DC /* CoreDataStack.swift in Sources */,
 				0294E8E524D065CC00FE39DC /* DetailController.swift in Sources */,
 				0294E8DF24D0659E00FE39DC /* SearchController.swift in Sources */,
+				0294E8F424D068A100FE39DC /* WhatCanIEat.xcdatamodeld in Sources */,
+				0294E8FA24D068CA00FE39DC /* SearchService.swift in Sources */,
 				0294E8EC24D0665400FE39DC /* RecipeTableViewCell.swift in Sources */,
+				0294E8F824D068C000FE39DC /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +436,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0294E8F224D068A100FE39DC /* WhatCanIEat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0294E8F324D068A100FE39DC /* WhatCanIEat.xcdatamodel */,
+			);
+			currentVersion = 0294E8F324D068A100FE39DC /* WhatCanIEat.xcdatamodel */;
+			path = WhatCanIEat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0294E8B924D05ED000FE39DC /* Project object */;
 }

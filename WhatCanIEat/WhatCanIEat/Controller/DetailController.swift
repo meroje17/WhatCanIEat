@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailController: UIViewController {
+final class DetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
