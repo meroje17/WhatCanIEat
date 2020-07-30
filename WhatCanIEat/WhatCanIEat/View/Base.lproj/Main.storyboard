@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JIj-jN-Ype">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="124" width="414" height="689"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ogP-Up-zaG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="ogP-Up-zaG" customClass="RecipeTableViewCell" customModule="WhatCanIEat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ogP-Up-zaG" id="zdf-nN-Ht5">
@@ -98,7 +98,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdT-wF-A3Q">
                                 <rect key="frame" x="10" y="384" width="394" height="408"/>
-                                <mutableString key="text">What is Lorem Ipsum?
+                                <string key="text">What is Lorem Ipsum?
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 Why do we use it?
@@ -111,7 +111,7 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
 
 Where can I get some?
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</mutableString>
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</string>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -154,7 +154,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="dbV-NJ-u6p"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="25"/>
                                 <color key="textColor" red="0.88163596389999999" green="0.49927783009999999" blue="0.52008944749999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -168,6 +168,9 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                         <state key="normal" title="SEARCH">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapSearchButton" destination="AOJ-io-Vev" eventType="touchUpInside" id="FNn-4z-g3D"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EP-J9-Ybu">
                                         <rect key="frame" x="202" y="0.0" width="192" height="60"/>
@@ -176,6 +179,9 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                         <state key="normal" title="RESET">
                                             <color key="titleColor" red="0.88163596389999999" green="0.49927783009999999" blue="0.52008944749999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapResetButton" destination="AOJ-io-Vev" eventType="touchUpInside" id="QMV-TM-0NE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -185,32 +191,41 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QSv-pC-GqD">
                                 <rect key="frame" x="10" y="134" width="394" height="589"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bKM-ne-fhj">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bKM-ne-fhj">
+                                    <size key="itemSize" width="110" height="110"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6cH-cj-9Ph">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IngredientCell" id="6cH-cj-9Ph" customClass="IngredientCollectionViewCell" customModule="WhatCanIEat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="c3T-A7-JCk">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="U9E-2m-ZJM">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="7AG-hc-3mi">
+                                <rect key="frame" x="10" y="743" width="394" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="isv-3a-8X7"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="v2i-7I-YKn" firstAttribute="top" secondItem="YHU-GG-dFt" secondAttribute="top" constant="10" id="3JK-Wa-L68"/>
                             <constraint firstItem="o4e-37-3CY" firstAttribute="leading" secondItem="YHU-GG-dFt" secondAttribute="leading" constant="10" id="DU8-Hf-pHs"/>
+                            <constraint firstItem="YHU-GG-dFt" firstAttribute="trailing" secondItem="7AG-hc-3mi" secondAttribute="trailing" constant="10" id="JLz-qZ-VMB"/>
+                            <constraint firstItem="YHU-GG-dFt" firstAttribute="bottom" secondItem="7AG-hc-3mi" secondAttribute="bottom" constant="10" id="Khx-9t-ign"/>
                             <constraint firstItem="QSv-pC-GqD" firstAttribute="leading" secondItem="YHU-GG-dFt" secondAttribute="leading" constant="10" id="Pgo-Ub-cDR"/>
                             <constraint firstItem="YHU-GG-dFt" firstAttribute="trailing" secondItem="QSv-pC-GqD" secondAttribute="trailing" constant="10" id="SoI-qB-fKW"/>
                             <constraint firstItem="YHU-GG-dFt" firstAttribute="trailing" secondItem="v2i-7I-YKn" secondAttribute="trailing" constant="10" id="UNz-7w-d94"/>
                             <constraint firstItem="QSv-pC-GqD" firstAttribute="top" secondItem="v2i-7I-YKn" secondAttribute="bottom" constant="20" id="Yo5-jb-SpU"/>
+                            <constraint firstItem="7AG-hc-3mi" firstAttribute="leading" secondItem="YHU-GG-dFt" secondAttribute="leading" constant="10" id="ame-FW-oM1"/>
                             <constraint firstItem="o4e-37-3CY" firstAttribute="top" secondItem="QSv-pC-GqD" secondAttribute="bottom" constant="20" id="hfT-K7-6Bz"/>
                             <constraint firstItem="YHU-GG-dFt" firstAttribute="trailing" secondItem="o4e-37-3CY" secondAttribute="trailing" constant="10" id="ot2-eP-PEE"/>
                             <constraint firstItem="v2i-7I-YKn" firstAttribute="leading" secondItem="YHU-GG-dFt" secondAttribute="leading" constant="10" id="w5D-OM-WGH"/>
@@ -220,6 +235,11 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="iiW-W4-upV"/>
                     <connections>
+                        <outlet property="buttonStackView" destination="o4e-37-3CY" id="7WN-03-SXl"/>
+                        <outlet property="ingredientsCollectionView" destination="QSv-pC-GqD" id="GhN-kZ-DIt"/>
+                        <outlet property="resetButton" destination="6EP-J9-Ybu" id="atZ-RK-Vm3"/>
+                        <outlet property="searchButton" destination="70H-Q5-2wB" id="odK-UE-Eo1"/>
+                        <outlet property="waitingActivityIndicator" destination="7AG-hc-3mi" id="SB0-PX-Llw"/>
                         <segue destination="IM7-Cn-MP2" kind="show" identifier="tapSearchButton" id="I2I-dx-brC"/>
                     </connections>
                 </viewController>
@@ -248,7 +268,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                 <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Mtb-Mv-2uq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="Mtb-Mv-2uq" customClass="RecipeTableViewCell" customModule="WhatCanIEat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mtb-Mv-2uq" id="GFm-Vr-kby">

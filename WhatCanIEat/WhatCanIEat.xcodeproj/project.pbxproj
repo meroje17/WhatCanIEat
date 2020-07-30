@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024AE27324D1C7E50051479F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024AE27224D1C7E50051479F /* Error.swift */; };
 		0294E8C524D05ED000FE39DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8C424D05ED000FE39DC /* AppDelegate.swift */; };
 		0294E8C724D05ED000FE39DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0294E8C624D05ED000FE39DC /* SceneDelegate.swift */; };
 		0294E8CC24D05ED000FE39DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0294E8CA24D05ED000FE39DC /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024AE27224D1C7E50051479F /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		0294E8C124D05ED000FE39DC /* WhatCanIEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatCanIEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0294E8C424D05ED000FE39DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0294E8C624D05ED000FE39DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				0294E8CD24D05ED400FE39DC /* Assets.xcassets */,
 				0294E8C424D05ED000FE39DC /* AppDelegate.swift */,
 				0294E8C624D05ED000FE39DC /* SceneDelegate.swift */,
+				024AE27224D1C7E50051479F /* Error.swift */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024AE27324D1C7E50051479F /* Error.swift in Sources */,
 				0294E8E324D065BE00FE39DC /* FavoriteController.swift in Sources */,
 				0294E8E124D065AD00FE39DC /* SearchResultController.swift in Sources */,
 				0294E8FC24D068D900FE39DC /* EdamamService.swift in Sources */,

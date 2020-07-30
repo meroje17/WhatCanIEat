@@ -13,6 +13,10 @@ struct EdamamID: Decodable {
     let ID: [String: String]
 }
 
+typealias ID = [String: String]
+
+typealias Zouglou = [String: String]
+
 // All struct to decode API Result
 struct EdamamResult: Decodable {
     let hits: [Hit]
@@ -62,7 +66,7 @@ final class EdamamService {
         let url = createURL(baseUrl, body)
         task = session.dataTask(with: url) { [unowned self] (data, response, error) in
             let decoder = JSONDecoder()
-            guard let data = data, error != nil else {
+            guard let data = data, error == nil else {
                 callback(.failure(.noData))
                 return
             }
@@ -77,6 +81,7 @@ final class EdamamService {
             let recipes = self.returningAllRecipes(result)
             callback(.success(recipes))
         }
+        task?.resume()
     }
     
     func resetBody() {
@@ -96,11 +101,14 @@ final class EdamamService {
     // MARK: - Private methods
     
     private func loadJSON() -> [String: String] {
+        var result = [String: String]()
         let decoder = JSONDecoder()
         guard let url = Bundle.main.url(forResource: "EdamamID", withExtension: "json") else { return [String: String]() }
         guard let data = try? Data(contentsOf: url) else { return [String: String]() }
-        guard let result = try? decoder.decode(EdamamID.self, from: data) else { return [String: String]() }
-        return result.ID
+        guard let decodedData = try? decoder.decode(ID.self, from: data) else { return [String: String]() }
+        result.updateValue(decodedData["2"]!, forKey: decodedData["1"]!)
+        result.updateValue(decodedData["4"]!, forKey: decodedData["3"]!)
+        return result
     }
     
     private func createURL(_ baseUrl: URL, _ parameters: [String: String]) -> URL {
