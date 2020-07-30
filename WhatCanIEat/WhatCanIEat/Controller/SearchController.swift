@@ -28,17 +28,19 @@ final class SearchController: UIViewController {
     
     // MARK: - Initializer
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         initUI()
         initBackgroundLogic()
+        tapResetButton()
+        recipes = [Recipe]()
     }
     
     // MARK: - User actions
     
     @IBAction private func tapSearchButton() {
-        hideWaitingActivityIndicator(true)
+        hideWaitingActivityIndicator(false)
         prepareAPICall(with: searchService.ingredients) {
             requestService.getRecipes { [unowned self] result in
                 switch result {
@@ -54,7 +56,7 @@ final class SearchController: UIViewController {
                 }
             }
         }
-        hideWaitingActivityIndicator(false)
+        hideWaitingActivityIndicator(true)
     }
     
     @IBAction private func tapResetButton() {
@@ -70,7 +72,7 @@ final class SearchController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "tapSearchButton" {
             if let destination = segue.destination as? SearchResultController {
-                destination.recipes = [Recipe]()
+                destination.recipes = recipes
             }
         }
     }

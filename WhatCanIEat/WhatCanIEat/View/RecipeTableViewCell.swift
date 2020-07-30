@@ -19,7 +19,7 @@ final class RecipeTableViewCell: UITableViewCell {
     
     // Init UI
     func configure(with recipe: Recipe) {
-        guard let url = URL(string: recipe.url) else { return }
+        guard let url = URL(string: recipe.image) else { return }
         recipeName.text = recipe.name
         load(url)
     }
