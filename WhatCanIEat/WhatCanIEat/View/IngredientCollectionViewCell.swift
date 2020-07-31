@@ -19,14 +19,18 @@ final class IngredientCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Initializer
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    fileprivate func initUI() {
         viewToRounded.layer.cornerRadius = 20
         viewToRounded.layer.borderWidth = 2
         viewToRounded.layer.borderColor = UIColor.white.cgColor
         viewToRounded.layer.shadowColor = UIColor.black.cgColor
         viewToRounded.layer.shadowOpacity = 0.2
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        initUI()
     }
     
     // MARK: - Method to init UI with Ingredient object
