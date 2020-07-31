@@ -14,6 +14,10 @@ final class FavoriteController: UIViewController {
     
     var recipe: Recipe!
     
+    // MARK: - Outlet
+    
+    @IBOutlet private weak var favoriteRecipeTableView: UITableView!
+    
     // MARK: - Initializer
     
     override func viewDidLoad() {

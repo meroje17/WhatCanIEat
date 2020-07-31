@@ -42,7 +42,7 @@ final class CoreDataManager {
     
     func removeRecipe(named name: String) {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "label = %@", name)
+        request.predicate = NSPredicate(format: "name = %@", name)
         guard let recipes = try? managedObjectContext.fetch(request) else { return }
         if recipes.isEmpty { return }
         managedObjectContext.delete(recipes[0])
@@ -51,7 +51,7 @@ final class CoreDataManager {
     
     func isRegistered(named name: String) -> Bool {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "label = %@", name)
+        request.predicate = NSPredicate(format: "name = %@", name)
         guard let recipes = try? managedObjectContext.fetch(request) else { return false }
         if recipes.isEmpty { return false }
         return true

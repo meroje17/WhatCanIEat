@@ -37,7 +37,7 @@ final class SearchResultController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "recipeChoosing" {
-            if let destination = segue.destination as? FavoriteController {
+            if let destination = segue.destination as? DetailController {
                 guard let recipe = recipeToSend else { return }
                 destination.recipe = recipe
             }
@@ -56,6 +56,9 @@ final class SearchResultController: UIViewController {
     }
 }
 
+// MARK: - Extension for TableView
+
+// Data source : init number and customization of cell
 extension SearchResultController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
@@ -68,6 +71,7 @@ extension SearchResultController: UITableViewDataSource {
     }
 }
 
+// Delegate : react to user action
 extension SearchResultController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         recipeToSend = recipes[indexPath.row]

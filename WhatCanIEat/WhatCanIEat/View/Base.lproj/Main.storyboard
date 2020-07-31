@@ -35,7 +35,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="81k-9R-6zg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="25"/>
                                 <color key="textColor" red="0.88163596389999999" green="0.49927783009999999" blue="0.52008944749999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -54,6 +54,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorite" image="star" catalog="system" id="sMu-gt-mc5"/>
                     <connections>
+                        <outlet property="favoriteRecipeTableView" destination="zHO-CF-faW" id="i96-Ww-XAN"/>
                         <segue destination="1cS-1z-iDN" kind="show" identifier="favoriteRecipeChoosing" id="PIK-mA-8f2"/>
                     </connections>
                 </viewController>
@@ -79,14 +80,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Bh-QP-2PI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Bh-QP-2PI">
                                 <rect key="frame" x="0.0" y="70" width="320" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="9zk-J8-8rv"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0B-Xy-wn4">
-                                <rect key="frame" x="60" y="498" width="200" height="60"/>
+                                <rect key="frame" x="60" y="488" width="200" height="60"/>
                                 <color key="backgroundColor" red="0.94823533299999996" green="0.83417028189999998" blue="0.61069357400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ggp-xj-L0y"/>
@@ -95,39 +96,89 @@
                                 <state key="normal" title="Go to website">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapGoToWebsiteButton" destination="1cS-1z-iDN" eventType="touchUpInside" id="xmk-dI-dG5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2c-cn-iQR">
-                                <rect key="frame" x="10" y="330" width="300" height="158"/>
-                                <mutableString key="text">What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                <rect key="frame" x="10" y="370" width="300" height="108"/>
+                                <string key="text">What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzx-YQ-fma">
+                                <rect key="frame" x="250" y="0.0" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Bg7-GM-9Y4"/>
+                                    <constraint firstAttribute="height" constant="70" id="skf-cR-3H3"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="star" catalog="system"/>
+                                <connections>
+                                    <action selector="tapFavoriteButton" destination="1cS-1z-iDN" eventType="touchUpInside" id="fkg-0o-B5D"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2x-sZ-eCZ">
+                                <rect key="frame" x="0.0" y="330" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HSF-NZ-wIQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="18"/>
+                                <color key="textColor" red="0.88163596389999999" green="0.49927783009999999" blue="0.52008944749999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-Uj-SDk">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="FnB-M3-pWj"/>
+                                    <constraint firstAttribute="height" constant="70" id="mRE-EP-mKD"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="return" catalog="system"/>
+                                <connections>
+                                    <action selector="tapReturnButton" destination="1cS-1z-iDN" eventType="touchUpInside" id="dSC-y4-3mv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="EJG-T7-WPd" firstAttribute="trailing" secondItem="07t-d4-wPb" secondAttribute="trailing" id="0Mi-My-Dd1"/>
                             <constraint firstItem="EJG-T7-WPd" firstAttribute="trailing" secondItem="m0B-Xy-wn4" secondAttribute="trailing" constant="60" id="0et-19-3RX"/>
+                            <constraint firstItem="EJG-T7-WPd" firstAttribute="trailing" secondItem="dzx-YQ-fma" secondAttribute="trailing" id="4JM-9e-0QV"/>
                             <constraint firstItem="m0B-Xy-wn4" firstAttribute="leading" secondItem="EJG-T7-WPd" secondAttribute="leading" constant="60" id="6dd-II-4Cg"/>
                             <constraint firstItem="s2c-cn-iQR" firstAttribute="leading" secondItem="EJG-T7-WPd" secondAttribute="leading" constant="10" id="Au1-Iy-n3e"/>
+                            <constraint firstItem="2hD-Uj-SDk" firstAttribute="top" secondItem="EJG-T7-WPd" secondAttribute="top" id="CE0-Lx-dOc"/>
                             <constraint firstItem="EJG-T7-WPd" firstAttribute="trailing" secondItem="s2c-cn-iQR" secondAttribute="trailing" constant="10" id="I5M-uM-Fxv"/>
+                            <constraint firstItem="EJG-T7-WPd" firstAttribute="trailing" secondItem="R2x-sZ-eCZ" secondAttribute="trailing" id="KlT-uY-hvv"/>
+                            <constraint firstItem="R2x-sZ-eCZ" firstAttribute="leading" secondItem="EJG-T7-WPd" secondAttribute="leading" id="Lyp-Re-fbI"/>
                             <constraint firstItem="6Bh-QP-2PI" firstAttribute="top" secondItem="07t-d4-wPb" secondAttribute="bottom" id="MBi-tE-1uZ"/>
                             <constraint firstItem="07t-d4-wPb" firstAttribute="top" secondItem="EJG-T7-WPd" secondAttribute="top" id="QJ4-Fx-8Cn"/>
-                            <constraint firstAttribute="bottom" secondItem="m0B-Xy-wn4" secondAttribute="bottom" constant="10" id="gej-ib-Fyn"/>
-                            <constraint firstItem="s2c-cn-iQR" firstAttribute="top" secondItem="6Bh-QP-2PI" secondAttribute="bottom" constant="10" id="gw9-92-zGz"/>
+                            <constraint firstItem="dzx-YQ-fma" firstAttribute="top" secondItem="EJG-T7-WPd" secondAttribute="top" id="Xvr-jW-S2f"/>
+                            <constraint firstItem="R2x-sZ-eCZ" firstAttribute="top" secondItem="6Bh-QP-2PI" secondAttribute="bottom" constant="10" id="gEM-BI-XsD"/>
+                            <constraint firstAttribute="bottom" secondItem="m0B-Xy-wn4" secondAttribute="bottom" constant="20" id="gej-ib-Fyn"/>
                             <constraint firstItem="EJG-T7-WPd" firstAttribute="trailing" secondItem="6Bh-QP-2PI" secondAttribute="trailing" id="mFB-vW-QCJ"/>
                             <constraint firstItem="6Bh-QP-2PI" firstAttribute="leading" secondItem="EJG-T7-WPd" secondAttribute="leading" id="ofB-fK-afj"/>
+                            <constraint firstItem="s2c-cn-iQR" firstAttribute="top" secondItem="R2x-sZ-eCZ" secondAttribute="bottom" constant="10" id="pxw-Ak-erJ"/>
                             <constraint firstItem="m0B-Xy-wn4" firstAttribute="top" secondItem="s2c-cn-iQR" secondAttribute="bottom" constant="10" id="q8F-ds-qlC"/>
+                            <constraint firstItem="2hD-Uj-SDk" firstAttribute="leading" secondItem="EJG-T7-WPd" secondAttribute="leading" id="sSO-Yn-GTW"/>
                             <constraint firstItem="07t-d4-wPb" firstAttribute="leading" secondItem="EJG-T7-WPd" secondAttribute="leading" id="tfl-WM-f97"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EJG-T7-WPd"/>
                     </view>
                     <navigationItem key="navigationItem" id="lKE-JB-DCB"/>
+                    <connections>
+                        <outlet property="favoriteButton" destination="dzx-YQ-fma" id="qzt-Jo-JaY"/>
+                        <outlet property="goToWebsiteButton" destination="m0B-Xy-wn4" id="n6E-89-1Pu"/>
+                        <outlet property="ingredientsLabel" destination="s2c-cn-iQR" id="td5-s6-bs3"/>
+                        <outlet property="recipeImage" destination="6Bh-QP-2PI" id="Nnj-Hh-NCv"/>
+                        <outlet property="recipeName" destination="R2x-sZ-eCZ" id="dzf-tP-H44"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Wg-1a-QAz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="128"/>
+            <point key="canvasLocation" x="1194.375" y="127.8169014084507"/>
         </scene>
         <!--Search-->
         <scene sceneID="caV-jQ-NWo">
@@ -328,7 +379,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aYX-no-UZs"/>
+        <segue reference="PIK-mA-8f2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

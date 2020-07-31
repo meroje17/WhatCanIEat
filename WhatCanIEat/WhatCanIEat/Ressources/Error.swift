@@ -10,6 +10,7 @@ import UIKit
 
 enum ApplicationError: String {
     case network = "An network error has occured. Please retry later. It's possible your ingredients find nothing."
+    case urlNotFounded = "URL not founded, an error has occured. Please retry later."
 }
 
 extension UIViewController {
