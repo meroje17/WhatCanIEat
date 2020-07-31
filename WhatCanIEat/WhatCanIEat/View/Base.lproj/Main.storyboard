@@ -11,20 +11,20 @@
         <!--Favorite-->
         <scene sceneID="SRX-5m-oKj">
             <objects>
-                <viewController id="3bQ-fO-S0Z" customClass="FavoriteController" customModule="WhatCanIEat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="light" id="3bQ-fO-S0Z" customClass="FavoriteController" customModule="WhatCanIEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="axf-0E-arD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zHO-CF-faW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zHO-CF-faW">
                                 <rect key="frame" x="0.0" y="80" width="320" height="439"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="ogP-Up-zaG" customClass="RecipeTableViewCell" customModule="WhatCanIEat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="140" id="ogP-Up-zaG" customClass="RecipeTableViewCell" customModule="WhatCanIEat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ogP-Up-zaG" id="zdf-nN-Ht5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -53,6 +53,7 @@
                         <viewLayoutGuide key="safeArea" id="z2z-II-Joy"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorite" image="star" catalog="system" id="sMu-gt-mc5"/>
+                    <navigationItem key="navigationItem" id="szS-dc-T2f"/>
                     <connections>
                         <outlet property="favoriteRecipeTableView" destination="zHO-CF-faW" id="i96-Ww-XAN"/>
                         <segue destination="1cS-1z-iDN" kind="show" identifier="favoriteRecipeChoosing" id="PIK-mA-8f2"/>
@@ -65,7 +66,7 @@
         <!--Detail Controller-->
         <scene sceneID="1lS-CB-9rD">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="1cS-1z-iDN" customClass="DetailController" customModule="WhatCanIEat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" interfaceStyle="light" id="1cS-1z-iDN" customClass="DetailController" customModule="WhatCanIEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rKQ-kC-WnJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,7 +184,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
         <!--Search-->
         <scene sceneID="caV-jQ-NWo">
             <objects>
-                <viewController id="AOJ-io-Vev" customClass="SearchController" customModule="WhatCanIEat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="light" id="AOJ-io-Vev" customClass="SearchController" customModule="WhatCanIEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PdD-Fy-dQ5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,23 +274,24 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                         <viewLayoutGuide key="safeArea" id="YHU-GG-dFt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="iiW-W4-upV"/>
+                    <navigationItem key="navigationItem" id="x4W-SI-32u"/>
                     <connections>
                         <outlet property="buttonStackView" destination="o4e-37-3CY" id="7WN-03-SXl"/>
                         <outlet property="ingredientsCollectionView" destination="QSv-pC-GqD" id="GhN-kZ-DIt"/>
                         <outlet property="resetButton" destination="6EP-J9-Ybu" id="atZ-RK-Vm3"/>
                         <outlet property="searchButton" destination="70H-Q5-2wB" id="odK-UE-Eo1"/>
                         <outlet property="waitingActivityIndicator" destination="7AG-hc-3mi" id="SB0-PX-Llw"/>
-                        <segue destination="IM7-Cn-MP2" kind="show" identifier="tapSearchButton" id="I2I-dx-brC"/>
+                        <segue destination="IM7-Cn-MP2" kind="show" identifier="tapSearchButton" id="BFy-PH-HUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r4O-1K-lcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="-625"/>
+            <point key="canvasLocation" x="266" y="-636"/>
         </scene>
-        <!--Search Result Controller-->
+        <!--Item-->
         <scene sceneID="NV2-L0-LyP">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="IM7-Cn-MP2" customClass="SearchResultController" customModule="WhatCanIEat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" interfaceStyle="light" id="IM7-Cn-MP2" customClass="SearchResultController" customModule="WhatCanIEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jrL-EU-vRk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,15 +305,15 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                 <color key="textColor" red="0.88163596389999999" green="0.49927783009999999" blue="0.52008944749999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Y0-zb-QBD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Y0-zb-QBD">
                                 <rect key="frame" x="0.0" y="80" width="320" height="488"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="120" id="Mtb-Mv-2uq" customClass="RecipeTableViewCell" customModule="WhatCanIEat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="140" id="Mtb-Mv-2uq" customClass="RecipeTableViewCell" customModule="WhatCanIEat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mtb-Mv-2uq" id="GFm-Vr-kby">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -347,6 +349,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l3U-De-5jS"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="TDw-uW-KVu"/>
                     <navigationItem key="navigationItem" id="p67-aJ-uYc"/>
                     <connections>
                         <outlet property="recipeTableView" destination="9Y0-zb-QBD" id="dtr-tW-2ZO"/>
@@ -356,7 +359,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT5-S1-c8O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="-625"/>
+            <point key="canvasLocation" x="1194" y="-636"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KVG-jz-Np5">
@@ -369,8 +372,8 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                         <color key="selectedImageTintColor" red="0.88163596389999999" green="0.49927783009999999" blue="0.52008944749999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="AOJ-io-Vev" kind="relationship" relationship="viewControllers" id="4MF-xK-3gZ"/>
-                        <segue destination="3bQ-fO-S0Z" kind="relationship" relationship="viewControllers" id="qJd-KW-Bcg"/>
+                        <segue destination="AOJ-io-Vev" kind="relationship" relationship="viewControllers" id="hEB-SG-1c0"/>
+                        <segue destination="3bQ-fO-S0Z" kind="relationship" relationship="viewControllers" id="yfl-i1-WNc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9WZ-HQ-dgt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -379,7 +382,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PIK-mA-8f2"/>
+        <segue reference="aYX-no-UZs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
