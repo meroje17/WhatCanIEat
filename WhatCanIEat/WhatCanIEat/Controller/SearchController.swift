@@ -67,7 +67,7 @@ final class SearchController: UIViewController {
         ingredientsCollectionView.reloadData()
     }
     
-    // MARK: - Private method
+    // MARK: - Private methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "tapSearchButton" {

@@ -20,10 +20,13 @@ final class SearchResultController: UIViewController {
     @IBOutlet private weak var recipeTableView: UITableView!
     @IBOutlet private weak var returnButton: UIButton!
     
+    // MARK: - User action
+    
     @IBAction private func tapReturnButton() {
         recipes = [Recipe]()
         dismiss(animated: true, completion: nil)
     }
+    
     // MARK: - Initializer
     
     override func viewDidLoad() {
@@ -33,7 +36,7 @@ final class SearchResultController: UIViewController {
         initUI()
     }
     
-    // MARK: - Private method
+    // MARK: - Private methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "recipeChoosing" {

@@ -10,7 +10,7 @@ import UIKit
 
 final class FavoriteController: UIViewController {
 
-    // MARK: - Property
+    // MARK: - Properties
     
     private var recipeToSend: Recipe!
     private var recipes: [Recipe] = [Recipe]()
@@ -62,6 +62,7 @@ final class FavoriteController: UIViewController {
 
 // MARK: - Extension for Table View
 
+// Data source : init number and customization of cell
 extension FavoriteController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
@@ -71,13 +72,6 @@ extension FavoriteController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeTableViewCell else { return UITableViewCell() }
         cell.configure(with: recipes[indexPath.row])
         return cell
-    }
-}
-
-extension FavoriteController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        recipeToSend = recipes[indexPath.row]
-        performSegue(withIdentifier: "favoriteRecipeChoosing", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -95,5 +89,13 @@ extension FavoriteController: UITableViewDelegate {
         } else {
             return 0
         }
+    }
+}
+
+// Delegate : react to user action
+extension FavoriteController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        recipeToSend = recipes[indexPath.row]
+        performSegue(withIdentifier: "favoriteRecipeChoosing", sender: nil)
     }
 }
